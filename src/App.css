@@ -1,0 +1,126 @@
+ .scroll-progress-bar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 10px;
+   background-color: #ff5533;
+   z-index: 1000;
+   transition: width 0.2s ease-out;
+ }
+
+ .blur-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   backdrop-filter: blur(5px);
+   background-color: rgba(0, 0, 0, 0.2);
+   z-index: 998;
+   transition: opacity 0.3s ease;
+ }
+
+ .sticky-buttons {
+   position: fixed;
+   bottom: 2rem;
+   right: 2rem;
+   z-index: 999;
+   display: flex;
+   flex-direction: column;
+   font-family: sans-serif;
+
+   animation: slideUp 0.8s ease-out forwards;
+   transition: width 0.8s ease;
+   animation-delay: 2s;
+   opacity: 0;
+
+   color: black;
+   width: 12rem;
+   font-size: 1.5rem;
+   font-weight: 500;
+   cursor: pointer;
+
+   .menu-links {
+     background-color: #e6e6e6;
+     display: flex;
+     flex-direction: column;
+     padding: 1rem 1.5rem;
+
+     max-height: 0;
+     overflow: hidden;
+     opacity: 0;
+     transform: scaleY(0);
+     transform-origin: bottom;
+     transition:
+       max-height 0.4s ease 0.3s,
+       opacity 0.4s ease 0.3s,
+       transform 0.4s ease 0.3s;
+
+     animation: revealLinks 0.4s ease;
+   }
+
+   &.open {
+     width: 25rem;
+
+     .menu-links {
+       max-height: 500px;
+       opacity: 1;
+       transform: scaleY(1);
+     }
+
+     .menu-btn .plus {
+       transform: rotate(0deg);
+       transition: transform 0.3s ease;
+     }
+   }
+ }
+
+ .menu-btn {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #e6e6e6;
+   border: 1px solid black;
+   padding: 0.1rem 1.5rem;
+
+   &:hover {
+     background-color: #ff6340;
+   }
+ }
+
+ .menu-btn .plus {
+   border-left: 1px solid black;
+   padding-left: 1rem;
+   margin-left: 1rem;
+   font-size: 2rem;
+   transition: transform 0.3s ease;
+ }
+
+ .menu-links a {
+   text-decoration: none;
+   color: black;
+   padding: 0.4rem 0;
+
+   &:hover {
+     text-decoration: underline;
+   }
+ }
+
+ .menu-divider {
+   height: 1px;
+   background-color: black;
+   width: 100%;
+   opacity: 0.4;
+ }
+
+
+ .declare-btn {
+   background-color: #e6e6e6;
+   border: 1px solid black;
+   border-top: none;
+   padding: 0.5rem 1.5rem;
+
+   &:hover {
+     background-color: #ff6340;
+   }
+ }

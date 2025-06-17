@@ -1,0 +1,55 @@
+.donate-section {
+  display: flex;
+  padding: 14rem 2rem;
+  background-color: #000;
+  color: #fff;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .donate-left {
+    flex: 1;
+    min-width: 200px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: sticky;       
+    top: 0rem;             
+    height: fit-content;
+   
+  }
+
+  .donate-right {
+    flex: 1.4;
+    min-width: 300px;
+
+
+    .donate-desc {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      padding-right: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .donation-buttons {
+      display: flex;
+      gap: 1rem;
+      padding-left: 1rem;
+
+      button {
+        background-color: #eee;
+        color: #000;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.8rem 1.5rem;
+        border-radius: 9999px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #ff6340;
+        }
+      }
+    }
+  }
+}
